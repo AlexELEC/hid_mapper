@@ -35,7 +35,7 @@ OBJS=main.o uinput_device.o hid.o signals.o keys_definition.o EventMapping.o Key
      Exception.o MapReader.o MapReaderMouse.o log.o
 
 EXEC=hid_mapper
-VERSION=2.1.0
+VERSION=2.1.1
 PREFIX=/
 
 all: $(OBJS)
