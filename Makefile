@@ -39,13 +39,13 @@ VERSION=2.1.0
 PREFIX=/
 
 all: $(OBJS)
-	g++ $(LDFLAGS) $(OBJS) -o $(EXEC)
+	${CXX} $(LDFLAGS) $(OBJS) -o $(EXEC)
 
 %.o: %.cpp
-	g++ -c $(CPPFLAGS) $<
+	${CXX} -c $(CPPFLAGS) $<
 
 %.o: %.c
-	gcc -c $(CFLAGS) $<
+	${CC} -c $(CFLAGS) $<
 
 deb: all
 	rm -rf package/
