@@ -25,6 +25,7 @@
 #include <dirent.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/time.h>
 
 #define SYSFS_HIDRAW_CLASS_PATH "/sys/class/hidraw"
 
