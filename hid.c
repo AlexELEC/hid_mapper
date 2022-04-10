@@ -99,9 +99,9 @@ int lookup_hid_product(int lookup_mode,const char *manufacturer,const char *prod
 			
 			// Read vendor name
 			if(lookup_mode==LOOKUP_MODE_NAME)
-				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../manufacturer",symlink_filename);
+				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../manufacturer",entry->d_name);
 			else if(lookup_mode==LOOKUP_MODE_ID)
-				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../idVendor",symlink_filename);
+				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../idVendor",entry->d_name);
 			
 			if(re>=PATH_MAX)
 			{
@@ -130,9 +130,9 @@ int lookup_hid_product(int lookup_mode,const char *manufacturer,const char *prod
 			
 			// Read product name
 			if(lookup_mode==LOOKUP_MODE_NAME)
-				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../product",symlink_filename);
+				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../product",entry->d_name);
 			else if(lookup_mode==LOOKUP_MODE_ID)
-				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../idProduct",symlink_filename);
+				re = snprintf(filename,PATH_MAX,SYSFS_HIDRAW_CLASS_PATH "/%s/../../../../idProduct",entry->d_name);
 			
 			if(re>=PATH_MAX)
 			{
